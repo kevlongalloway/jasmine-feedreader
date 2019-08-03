@@ -99,7 +99,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          it('greater than 0 DOM entries', function () {
-            entries = document.getElementsByClassName('entry');
+            entries = document.querySelectorAll('.feed , .entry');
             expect(entries).toBeDefined();
             expect(entries.length).not.toBe(0);
          });
@@ -130,4 +130,7 @@ $(function() {
 
 
     });
+
+
+    
 }());
