@@ -99,7 +99,7 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          it('greater than 0 DOM entries', function () {
-            entries = document.querySelectorAll('.feed , .entry');
+            entries = document.querySelectorAll('.feed .entry');
             expect(entries).toBeDefined();
             expect(entries.length).not.toBe(0);
          });
@@ -113,12 +113,13 @@ $(function() {
             $('.feed').empty();
             loadFeed(0, function () {
                 feed1 = $('.feed').find(allFeeds.url);
-                done();
-            });
-            loadFeed(1, function () {
+                loadFeed(1, function () {
                 feed2 = $('.feed').find(allFeeds.url);
                 done();
+            	});
+                
             });
+            
         });
         /* Ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
